@@ -1,3 +1,4 @@
+<!-- This is simple HTML project for exercise from BigBinary Academy.https://bigbinaryacademy.com/movie-details-project  -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,14 +46,12 @@
     <h3>Tobey Maguire 🕸️</h3>
     <ol>
         <li>Spider-Man (2002)</li>
-        <br>
         <img src="./images/spiderman-2002_QarCu9M3L.jpeg" alt="Spider-Man 2002 Movie Poster" width="300" height="400">
         <img src="./images/spiderman-green-goblin__CkP0ILhdJ.jpeg" alt="Green Goblin and Spiderman 2002" width="600"
             height="400">
         <br>
         <br>
         <li>Spider-Man 2 (2004)</li>
-        <br>
         <img src="./images/doctor-octavious_oGCeW-rMj.jpeg" alt="Doctor Octopus and Spiderman 2004" width="300"
             height="400">
         <img src="./images/Spiderman-2004__UbcxGcWn.jpeg" alt="Spider-Man 2004 Movie Poster" width="300" height="400">
@@ -66,20 +65,139 @@
             height="400">
         <img src="./images/spiderman-2007_8-xe9sgFt.jpeg " alt="Venom and Spiderman 2007" width="600" height="400">
     </ol>
-
-    <h3>Andrew Garfield 🕸️</h3>
+    <br <h3>Andrew Garfield 🕸️</h3>
     <ol>
         <li>The Amazing Spider-Man (2012)</li>
-        <br>
         <img src="./images/amazing-spider-man-cast_alEVTwAST.webp" alt="The Amazing Spider-Man 2012 Movie Poster"
             width="900" height="400">
         <br>
         <br>
         <li>The Amazing Spider-Man 2 (2014)</li>
-        <br>
         <img src="./images/exclusive-the-amazing-spider-man-2-wallpaper-preview_HMxF9L0L2O.webp"
             alt="The Amazing Spider-Man 2014 Movie Poster" width="900" height="400">
     </ol>
+    <br <h3>Tom Holland 🕸️</h3>
+    <ol>
+        <li>Spider-Man: Homecoming (2017)</li>
+        <img src="./images/Spiderman Homecoming_3m2nqQZ-S.webp" alt="Spider-Man: Homecoming Movie Poster" width="900"
+            height="400">
+        <br>
+        <br>
+        <li>Spider-Man Far From Home (2019)</li>
+        <img src="./images/Spider-Man-FarFromHome_0eRdtLMFh.webp" alt="Spider-Man: Far From Home Movie Poster"
+            width="900" height="400">
+        <br>
+        <br>
+        <li>Spider-Man: No Way Home (2021)</li>
+        <img src="./images/Spiderman No Way Home_9n1qoF3Dn.webp" alt="Spider-Man: No Way Home Movie Poster" width="900"
+            height="400">
+    </ol>
+
+    <br><br>
+    <table>
+        <caption>Top 5 Movies Ranked By Their Box Office Gross</caption>
+        <thead>
+            <tr>
+                <th>Movie Name</th>
+                <th>Year</th>
+                <th>Gross Earning</th>
+                <th>IMDB Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Spider-Man: No Way Home</td>
+                <td>2021</td>
+                <td>$1.202 B</td>
+                <td>8.2</td>
+            </tr>
+            <tr>
+                <td>Spider-Man Far From Home</td>
+                <td>2019</td>
+                <td>$1.202 B</td>
+                <td>7.4</td>
+            </tr>
+            <tr>
+                <td>Spider-Man 3 </td>
+                <td>2007</td>
+                <td>$894 M</td>
+                <td>6.3</td>
+            </tr>
+            <tr>
+                <td>Spider-Man: Homecoming</td>
+                <td>2017</td>
+                <td>$880 M</td>
+                <td>7.4</td>
+            </tr>
+            <tr>
+                <td>Spider-Man</td>
+                <td>2002</td>
+                <td>$825 M</td>
+                <td>7.4</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+    <form>
+        <h3>Virtual Fan Club Registration Form</h3>
+        <fieldset>
+            <legend>User Info</legend>
+            <label for="regdate">Registration Date:</label>
+            <input type="date" id="regdate" required autofocus>
+            <br>
+            <br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required placeholder="Enter your name">
+            <br>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required placeholder="Enter your email">
+            <br>
+            <br>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required placeholder="+94 123 456 7890">
+            <br>
+            <br>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" required min="1900-01-01" max="2025-12-31">
+            <br>
+            <br>
+            <label for="favorite-movie">Which movie did you like the most:</label>
+            <select id="favorite-movie" required>
+                <option value="">Select Your Favorite Movie</option>
+                <option value="spiderman-no-way-home">Spider-Man: No Way Home</option>
+                <option value="spiderman-far-from-home">Spider-Man: Far From Home</option>
+                <option value="spiderman-homecoming">Spider-Man: Homecoming</option>
+                <option value="spiderman-3">Spider-Man 3</option>
+                <option value="amazing-spiderman-2">The Amazing Spider-Man 2</option>
+                <option value="amazing-spiderman">The Amazing Spider-Man</option>
+                <option value="spiderman-2">Spider-Man 2</option>
+                <option value="spiderman-2002">Spider-Man</option>
+            </select>
+            <br>
+            <br>
+            <label for="movie_universe">Which movie universe you support:</label>
+            <br>
+            <br>
+            <label for="marvel">Marvel 😍</label>
+            <input type="radio" id="marvel" name="movie_universe" value="marvel">
+            <br>
+            <br>
+            <label for="dc">DC 😎</label>
+            <input type="radio" id="dc" name="movie_universe" value="dc">
+            <br>
+            <br>
+            <label for="review">Review</label>
+            <br>
+            <br>
+            <textarea id="review" rows="4" cols="50" placeholder="Write your review here..."></textarea>
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
+    </form>
 
 </body>
 
