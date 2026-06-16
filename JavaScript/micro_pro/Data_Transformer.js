@@ -31,3 +31,9 @@ for (let i = 0; i < drivers.length; i++) {
 }
 
 console.log(activeDrivers);
+
+const activeDrivers2 = drivers
+  .filter((driver) => driver.status === "active")
+  .map((driver) => `${driver.name} - ${driver.vehicle}`);
+
+console.log(activeDrivers2);
