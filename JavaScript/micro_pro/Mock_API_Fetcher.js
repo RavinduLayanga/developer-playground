@@ -20,13 +20,13 @@ async function fetchUsers() {
     const data = await response.json();
     const users = data.map((user) => `${user.name}`);
     const listContainr = document.getElementById("user-display");
-    listContainr.innerHTML = users.map((name) => `<li>${name}</li>`).join("");
+    listContainr.innerHTML = users.map((name) => `<li>${name}</li>`).join(" ");
     console.log(users);
     // console.log(data);
   } catch (error) {
     console.log("Unable to load user profiles.");
     document.getElementById("user-display").innerHTML =
-      "<li>Unable to load user profiles.</li>";
+      "<h4>Unable to load user profiles.</h4>";
   }
 }
 
