@@ -10,20 +10,7 @@ class Book {
 //UI Class: handle UI tasks
 class UI {
   static displayBooks() {
-    const StoredBooks = [
-      {
-        title: "book one",
-        author: "John Doe",
-        isbn: "1234657",
-      },
-      {
-        title: "book two",
-        author: "Jane Doe",
-        isbn: "98465789",
-      },
-    ];
-
-    const books = StoredBooks;
+    const books = Store.getBooks();
 
     books.forEach((book) => UI.addBookToList(book));
   }
@@ -69,6 +56,34 @@ class UI {
 }
 
 // Store Class: handle storage
+class Store {
+  static getBooks() {
+    let books;
+    if (localStorage.getItem("books") === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem("books"));
+    }
+    return books;
+  }
+
+  static addBook(book) {
+    const books = Store.getBooks();
+    books.push(book);
+    localStorage.setItem("books", JSON.stringify(books));
+  }
+  static removeBook(isbn) {
+    const books = Store.getBooks();
+    books.forEach((book, index) => {
+      if (book.isbn === isbn) {
+        books.splice(index, 1);
+      }
+    });
+
+    localStorage.setItem("books", JSON.stringify(books));
+  }
+}
+
 // Event: display books
 document.addEventListener("DOMContentLoaded", UI.displayBooks);
 // Event: add a book
@@ -91,8 +106,11 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
     // Add book to ui
     UI.addBookToList(book);
 
+    // Add book to Store
+    Store.addBook(book);
+
     // Success message
-    UI.showAlert("Book Added", "sucess");
+    UI.showAlert("Book Added", "success");
 
     // clear field
     UI.clearFields();
@@ -101,8 +119,12 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
 
 // Event: remove a book
 document.querySelector("#book-list").addEventListener("click", (e) => {
+  // Remove book from UI
   UI.deleteBook(e.target);
 
   // Sucess message
   UI.showAlert("Book Removed", "success");
+
+  // Remove book from Storage
+  Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
