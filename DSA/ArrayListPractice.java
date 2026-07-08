@@ -73,6 +73,8 @@ public class ArrayListPractice {
 
         System.out.println("\n--- Search Results ---");
         System.out.println("Does the list contain 'Lilly'? " + hasLilly);
+
+        System.out.println("flower List: " +flowers);
         
         // Ensure the item exists before trying to get it
         if (indexOfLilly != -1) { 
