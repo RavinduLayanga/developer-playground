@@ -122,6 +122,43 @@ public class CustomLinkedList {
         
     }
 
+    public boolean Contains(String value){
+        Node current = head;
+        while(current != null){
+            if (current.data.equals(value)){
+                return true;
+            }
+            current = current.next;
+        
+        }
+        return false;
+    }
+
+    public int indexOf(String value){
+        Node current = head;
+        int index = 0;
+        while(current != null){
+            if(current.data.equals(value)){
+                return index;
+            }
+            current = current.next;
+            index ++;
+        }
+        return -1;
+    }
+
+    public int Size(){
+        Node current = head;
+        int count = 0;
+        while(current != null){
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+
+
+
 
 
     public void main (String args[]){
