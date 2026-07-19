@@ -21,7 +21,7 @@ public class HashMapPractice {
         System.out.println("--- HashMap Operations ---");
 
         // 1. .get() method
-        System.out.println("Searching for 'England' (correct case): " + capitalCities.get("England")); // Return London
+        System.out.println("Searching for 'England': " + capitalCities.get("England")); // Return London
 
         // 2. .remove() and .size() methods
         // .remove() returns the value of the item it just deleted.
