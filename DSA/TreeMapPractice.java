@@ -15,7 +15,7 @@ public class TreeMapPractice {
         // This prints in ALPHABETICAL order, not insertion order!
         System.out.println("Sorted Capitals: " + capitalCities);
 
-        System.out.println("Get England (fixed typo): " + capitalCities.get("England"));
+        System.out.println("Get England: " + capitalCities.get("England"));
         System.out.println("Removed Norway. Its capital was: " + capitalCities.remove("Norway"));
         System.out.println("Map Size: " + capitalCities.size());
         System.out.println("Has India? " + capitalCities.containsKey("India"));
