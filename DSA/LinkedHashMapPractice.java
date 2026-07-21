@@ -38,6 +38,7 @@ public class LinkedHashMapPractice {
 
         capitalCities.clear();
         System.out.println("\nMap after clear: " + capitalCities);
+        System.out.println("Is the map empty now? " + capitalCities.isEmpty());
 
         System.out.println("\n--- 2. Advanced Mode (Access Order / LRU) ---");
         // Constructor: (capacity, loadFactor, accessOrder)
@@ -57,5 +58,25 @@ public class LinkedHashMapPractice {
         // UPDATE "File2". Watch it also move to the back!
         recentFiles.put("File2", "Updated_Image.png");
         System.out.println("Order after updating File2: " + recentFiles);
+
+        System.out.println("\n--- 3. Inherited HashMap Methods ---");
+        Map<String, Integer> studentMarks = new LinkedHashMap<>();
+        studentMarks.put("Amara", 45);
+        studentMarks.put("Kamal", 65);
+        studentMarks.put("Sitha", 55);
+        studentMarks.put("Dumindu", 95);
+        studentMarks.put("Pawani", 75);
+
+        System.out.println("Does map have key 'Sitha'? " + studentMarks.containsKey("Sitha")); // true
+        System.out.println("Does map have score 95? " + studentMarks.containsValue(95)); // true
+
+        studentMarks.putIfAbsent("Kamal", 100); // Kamal exists, does nothing.
+        studentMarks.putIfAbsent("Ruwan", 80); // Ruwan does not exist, so he gets added to the end of the line.
+
+        studentMarks.replace("Amara", 45, 50); // Updates Amara's score from 45 to 50 safely.
+
+        System.out.println("Nuwan's Score (Default 0): " + studentMarks.getOrDefault("Nuwan", 0));
+
+        System.out.println("Final Student Marks (Maintains Order): " + studentMarks);
     }
 }
