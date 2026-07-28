@@ -1,0 +1,16 @@
+.container{
+    color: #FF9900;
+    font-family: 'Verdana, sans-serif';
+    text-align: center;
+    margin: 20px;
+}
+
+.header{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.paragraph{
+    color: #146EB4;
+    font-size: 1.2rem;
+}

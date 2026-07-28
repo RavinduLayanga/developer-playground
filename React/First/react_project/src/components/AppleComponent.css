@@ -1,0 +1,10 @@
+.apple-container{
+    color: #A2AAAD;
+    font-family: 'San Francisco', Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+.apple-paragraph{
+    color: #333;
+    font-size: 1.2rem;
+}

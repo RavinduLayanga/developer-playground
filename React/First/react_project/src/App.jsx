@@ -1,35 +1,75 @@
+import PropTypes from "prop-types";
+const BlueComponent = () => (
+  <div style={{ color: "blue" }}>
+    <p>This Component is blue.</p>
+  </div>
+);
+
+const GreenComponent = () => (
+  <div style={{ color: "green" }}>
+    <p>This Component is Green.</p>
+  </div>
+);
+
+const RedComponent = () => (
+  <div style={{ color: "red" }}>
+    <p>This Component is Red.</p>
+  </div>
+);
+
+// Reusable components using props
+// const ColourfulComponent =(props)=>(
+//   <div style{{color:props.color}}>
+//   <p>This Component is{props.color}.</p>
+// </div>
+// );
+const ColourfulComponent = ({ color }) => (
+  <div style={{ color: color }}>
+    <p>This Component is {color}.</p>
+  </div>
+);
+
+// Prop Types for Validation
+ColourfulComponent.propTypes = {
+  color: PropTypes.string.isRequired,
+};
+
 const App = () => {
-  const userName = "Alice";
-  const greetUser = (name) => `Hello, ${name}!`;
-  const userInfo = { age: 25, location: " New York" };
-  //Inline style object
-  const titleStyle = {
-    color: "blue",
-    fontSize: "24px",
-    textAlign: "center",
-    margin: "20px 0",
-  };
+  const color1 = "blue";
+  const color2 = "green";
+  // Reusable UserProfile Component
+  const UserProfile = (props) => (
+    <div>
+      <h1>Name:{props.name}</h1>
+      <h1>Date of Birth:{props.dateOfBirth}</h1>
+      <h1>Company:{props.company}</h1>
+      <h1>University:{props.univercity}</h1>
+    </div>
+  );
+
   return (
-    <>
-      {/* Pasing strings with quotes */}
-      <img src="images/nature.jpg" width="300" alt="Nature" />
+    <div>
+      <BlueComponent />
+      <GreenComponent />
+      <RedComponent />
+      <ColourfulComponent color="yellow" />
+      <ColourfulComponent color="brown" />
+      <ColourfulComponent color="pink" />
+      <ColourfulComponent color={color1}>
+        <p>Blue is considered a calming color for the eyes.</p>
+      </ColourfulComponent>
+      <ColourfulComponent color={color2}>
+        <p>Green symbolizes nature, renewal, and energy.</p>
+      </ColourfulComponent>
 
-      {/* Referancing a Javascript Variable */}
-      <p>Your Name is : {userName}</p>
-
-      {/* Calling a JavaScript Variable */}
-      <p>Greeting: {greetUser(userName)}</p>
-
-      {/* Using JavaScript object */}
-      <p>
-        Age: {userInfo.age}, Location: {userInfo.location}
-      </p>
-      <h1 style={titleStyle}> Welcome to React!</h1>
-      {/* 
-      <input type="text" placeholder="Type your name" autoComplete="off" /> */}
-    </>
+      <UserProfile
+        name="Mark Zuckerberg"
+        dateOfBirth="1984-05-14"
+        company="Meta (formerly Facebook)"
+        univercity="Harvard University"
+      />
+    </div>
   );
 };
 
-//Export thr App component
 export default App;
