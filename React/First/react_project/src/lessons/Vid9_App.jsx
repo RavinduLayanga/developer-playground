@@ -1,15 +1,10 @@
-import AppleComponent from "./components/AppleComponent";
-import AmazonComponent from "./components/AmazonComponent";
-import GoogleComponent from "./components/GoogleComponent";
-
-const App = () => {
-  return (
-    <div>
-      <AppleComponent />
-      <AmazonComponent />
-      <GoogleComponent />
-    </div>
-  );
-};
+import SpeedMessage from "./components/SpeedMessage";
+const App = () => (
+  <>
+    <SpeedMessage speed={35} />
+    <SpeedMessage speed={55} />
+    <SpeedMessage speed={85} />
+  </>
+);
 
 export default App;
